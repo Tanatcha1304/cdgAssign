@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment1.2</title>
+</head>
+<style>
+    table,th,td{
+        border: 1px solid black;
+    }
+    .th1{
+        color: midnightblue;
+    }
+    h3{
+        color: dodgerblue;
+    }
+    img{
+        position:absolute;
+        top:80px;
+        right:0px;
+        width: 20%;
+    }
+</style>
+<body>
+    <h1>Dog D. Dog</h1>
+    <img src="IMG_1644.JPG">
+    <div class="about">
+        <h3 style="background-color:lightskyblue;">About</h3>
+        <p>Woof Woof!</p>
+        <p>Hi. I'm Dog. I love <span style="color: dodgerblue;">Interface Design</span>.</p>
+    </div>
+    <div class="courses">
+        <h3 style="background-color: lightskyblue;">Courses</h3>
+        <p>Hero are some courses I've taken:</p>
+        <table>
+            <tr>
+                <th>Course Number</th>
+                <th>Course Title</th>
+                <th>Semester Taken</th>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;"><h4>For Credit</h4></td>
+            </tr>
+            <tr>
+                <th class="th1">6.813</th>
+                <th style="color: dodgerblue;">User Interface Design</th>
+                <th style="color: dodgerblue;">Spring 2014</th>
+            </tr>
+            <tr>
+                <th class="th1">6.034</th>
+                <th>Artificial Intelligence </th>
+                <th>Fall 2013</th>
+            </tr>
+            <tr>
+                <th class="th1">6.006</th>
+                <th>Introduction to Algorithms</th>
+                <th>Fall 2013</th>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;"><h4>Listener</h4></td>
+            </tr>
+            <tr>
+                <th class="th1">6.867</th>
+                <th>Machine Learning</th>
+                <th>Fall 2013</th>
+            </tr>
+            <tr>
+                <th class="th1">6.830</th>
+                <th>Database Systems</th>
+                <th>Fall 2012</th>
+            </tr>
+        </table>
+    </div>
+    <div class="interest">
+        <h3 style="background-color:lightskyblue;">Interests</h3>
+        <p>I am interested HCI, memes, and youtube videos.</p>
+    </div>
+    <div>
+        <h3 style="background-color:lightskyblue;">Submit Pet Information</h3>
+        <p>Would love to know what kinds of pets you 'own' (you'll never own me). Submit below!</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br>
+            <label for="Phylum">Phylum:</label>
+            <input type="text" id="Phylum" name="Phylum"><br>
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" name="gender"><br>
+            <input type="submit" value="Submit"><br>
+        </form>
+    </div>
+
+
+</body>
+</html>

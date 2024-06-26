@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="nav-bar">
+        <div class="search">
+            <span class="p-input-icon-left-lg">
+                <i class="pi pi-search"></i>
+                <input type="text" pInputText placeholder="         ค้นหา" [formControl]="searchControl"/>
+            </span>
+            <p-button icon="pi pi-user-plus" (click)="onAdd()"/>
+        </div>
+        
+        
+        <div class="list">
+            <p *ngFor="let user of filteredUsers; let i = index" (click)="onEdit(user)">
+                <p-avatar *ngIf="user.GENDER === 'F'"
+                icon="pi pi-user" styleClass="mr-2"  shape="circle" [style]="{'background-color': '#FFB6C1', color: '#000000'}"/>
+                <p-avatar *ngIf="user.GENDER === 'M'"
+                icon="pi pi-user" styleClass="mr-2"  shape="circle" [style]="{'background-color': '#B0E0E6', color: '#000000'}"/>
+                {{user.NAME}} {{user.SURNAME}}</p>
+        </div>
+        
+
+    </div>
+    <div class="right-container">
+        <div class="form-container">
+            <p-button *ngIf="editMode === true"
+            severity="danger" 
+            (click)="onDelete($event)"
+            >ลบผู้ใช้งาน</p-button>
+            <h3 style="width: 50%;">{{editMode ? 'แก้ไขผู้ใช้งาน':'เพิ่มผู้ใช้งาน'}}</h3>
+            
+            <form [formGroup]="userForm">
+                    <div class="form-group" [ngClass]="{'invalid': !userForm.controls['name'].valid && userForm.controls['name'].touched}">
+                    <label for="name">ชื่อ:</label>
+                    <input type="text" pInputText id="name" formControlName="name" (blur)="onNameBlur()"/>
+                    <p-rating *ngIf="value > 0 " formControlName = "value" [readonly]="true" [cancel]="false" [stars]="3"/>
+                </div>
+                <div class="form-group" [ngClass]="{'invalid': !userForm.controls['surname'].valid && userForm.controls['surname'].touched}">
+                    <label for="surname">สกุล:</label>
+                    <input type="text" pInputText id="surname" formControlName="surname"/>
+                </div>
+                <div class="form-group radio-group" [ngClass]="{'invalid': !userForm.controls['gender'].valid && userForm.controls['gender'].touched}">
+                    <label for="gender" >เพศ:</label>
+                    <p-radioButton name="gender" value="M" inputId="gender1" id="male" formControlName="gender"/>
+                    <label for="gender1" style="width: 50px;">ชาย</label>
+                    <p-radioButton name="gender" value="F" inputId="gender2" id="female" formControlName="gender"/>
+                    <label for="gender2" style="width: 50px;">หญิง</label>
+                </div>
+                <div class="form-group" [ngClass]="{'invalid': !userForm.controls['phone'].valid && userForm.controls['phone'].touched}">
+                    <label for="phone">หมายเลขโทรศัพท์:</label>
+                    <input type="text" pInputText formControlName="phone"/>
+                </div>
+            </form>
+            
+            
+            </div>
+        <div class="map-panel" #mapPanel id="map-panel"></div>
+        <div class="button" >
+            <p-button severity="success" (click)="onSave()">บันทึก</p-button>
+            <p-button severity="secondary" (click)="onReset()">ล้างค่า</p-button>
+        </div>
+    </div>
+</div>
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>
+

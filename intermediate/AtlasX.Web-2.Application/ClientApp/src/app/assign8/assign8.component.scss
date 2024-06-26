@@ -1,0 +1,98 @@
+.container{
+    display: flex;
+    height: 100%;
+}
+.nav-bar{
+    height: 100%;
+    width: 30%;
+    
+}
+
+.search {
+    background-color: black;
+}
+
+.search input{
+    margin: 10px;
+}
+
+
+.list{
+    height: 95%;
+    width: 100%;
+    display:inline-block;
+    overflow-y: scroll;
+    margin-left: 10px;
+}
+
+.right-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.form-container{
+    height: 40%;
+}
+
+.form-container p-button{
+    width: 200px;
+    float: right;
+
+    margin-top: 10px;
+    margin-right: 0px;
+}
+
+.map-panel{
+    height: 50%;
+    margin-right: 20px;
+}
+.button{
+    height: 10%;
+}
+
+.delButton{
+    margin: 0;
+    float: right;
+}
+
+.form-group{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label{
+    width: 150px;
+    margin-right: 10px;
+}
+
+.search input[type="text"], .search p-inputtext{
+    padding: 5px;
+}
+
+.form-group input[type="text"], .form-group p-inputtext{
+    padding: 5px;
+}
+.form-group.radio-group {
+    display: flex;
+    align-items: center;
+}
+.form-group.radio-group label {
+    
+    margin-right: 10px;
+}
+.form-group.radio-group p-radiobutton {
+    margin-right: 5px;
+}
+
+.invalid input, .invalid p-radioButton {
+    border: 1px solid red;
+  }
+
+.list li{
+    cursor: pointer;
+    margin: 5px;
+
+}
